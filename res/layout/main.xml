@@ -9,8 +9,9 @@
     tools:context="com.apps.interestingapps.easycustomercaredialer.EasyCustomerCareDialerActivity" >
 
     <TextView
+        android:id="@+id/country_not_selected_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="@string/please_select_a_country_warning" />
 
 </RelativeLayout>

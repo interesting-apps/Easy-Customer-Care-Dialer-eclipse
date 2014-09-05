@@ -2,7 +2,11 @@
 <resources>
 
     <string name="app_name">Easy Customer Care Dialer</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="please_select_a_country_warning">Please select a country to retrieve its data!</string>
     <string name="action_settings">Settings</string>
-
+	<string name="frequently_called_country">frequently_called_country</string>
+	<string name="select_country_dialog_title">Select the Country where you are!</string>
+	<string name="ok_button_text">OK</string>
+	<string name="cancel_button_text">Cancel</string>
+   
 </resources>
