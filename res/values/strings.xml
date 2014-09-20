@@ -8,5 +8,6 @@
 	<string name="select_country_dialog_title">Select the Country where you are!</string>
 	<string name="ok_button_text">OK</string>
 	<string name="cancel_button_text">Cancel</string>
+	<string name="enter_company_name_text">Enter Company name..</string>
    
 </resources>

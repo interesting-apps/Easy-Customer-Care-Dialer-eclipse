@@ -16,35 +16,15 @@ public class EccdConstants {
 	public static final String DATABASE_VERSION_TABLE = "database_version";
 
 	public static final String DATABASE_VERSION_COLUMN = "database_version";
-
-	public static final String CREATE_ANDROID_METADATA_TABLE_QUERY = "CREATE TABLE android_metadata "
-			+ "('locale' TEXT NOT NULL DEFAULT ('en_US'))";
-	public static final String CREATE_COUNTRY_TABLE_QUERY = "CREATE TABLE country "
-			+ "('name' text primary key , 'country_code' INTEGER NOT NULL )";
-	public static final String CREATE_COMPANY_TABLE_QUERY = "CREATE TABLE company "
-			+ "('company_id' INTEGER primary key autoincrement ,"
-			+ "'name' Text NOT NULL,    'last_updated' Date)";
-	public static final String CREATE_COUNTRY_CONSISTSOF_COMPANY_TABLE_QUERY = "CREATE TABLE country_consistsof_company "
-			+ "('country_name' Text NOT NULL, 'company_id' INTEGER, "
-			+ "'top_rated' boolean default ('false'), "
-			+ "primary key ('country_name', 'company_id'), "
-			+ "foreign key('country_name') references country('country_name') on delete cascade on update cascade, "
-			+ "foreign key('company_id') references company('company_id') on delete cascade on update cascade)";
-	public static final String CREATE_CONTACT_TABLE_QUERY = "CREATE TABLE contact "
-			+ "('phone_number' Text NOT NULL primary key, "
-			+ "'email_id' Text, 'department_name' Text default ('All'))";
-	public static final String CREATE_OPTIONS_TABLE_QUERY = "CREATE TABLE options "
-			+ "('phone_number' Text NOT NULL, 'level' integer NOT NULL, "
-			+ "'option_number' integer NOT NULL, "
-			+ "'option_text' Text NOT NULL, 'wait_time' integer default 0, "
-			+ "primary key('phone_number', 'level', 'option_number'), "
-			+ "foreign key('phone_number') references contact('phone_number') on delete cascade on update cascade)";
-	public static final String CREATE_COMPANY_HAS_CONTACT_TABLE_QUERY = "CREATE TABLE company_has_contact "
-			+ "('company_id' Text NOT NULL,'phone_number' Text NOT NULL, "
-			+ "primary key('company_id', 'phone_number'), "
-			+ "foreign key('phone_number') references contact('phone_number') on delete cascade on update cascade, "
-			+ "foreign key('company_id') references company('company_id') on delete cascade on update cascade)";
-	public static final String CREATE_DATABASE_VERSION_TABLE = "create table database_version (version int)";
+	public static final String COMPANY_ID_COLUMN = "company_id";
+	public static final String COUNTRY_NAME_COLUMN = "country_name";
+	public static final String COMPANY_NAME_COLUMN = "company_name";
+	public static final String PHONE_NUMBER_COLUMN = "phone_number";
+	public static final String LEVEL_COLUMN = "level";
+	public static final String PARENT_OPTION_NUMBER_COLUMN = "parent_option_number";
+	public static final String OPTION_NUMBER_COLUMN = "option_number";
+	public static final String OPTION_TEXT_COLUMN = "option_text";
+	public static final String WAIT_TIME_COLUMN = "wait_time";
 
 	public static final String ENABLE_FOREIGN_KEY_QUERY = "PRAGMA foreign_keys=ON;";
 
@@ -52,4 +32,5 @@ public class EccdConstants {
 	public static final String PREFERENCES_FILE_NAME = APP_PACKAGE
 			+ ".preferences";
 
+	public static final String DATA_SEPARATOR = "->";
 }

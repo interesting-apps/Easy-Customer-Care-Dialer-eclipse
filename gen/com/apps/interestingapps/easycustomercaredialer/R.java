@@ -1099,13 +1099,18 @@ containing a value of this type.
         public static final int beginning=0x7f050011;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
-        public static final int country_not_selected_text_view=0x7f05003c;
+        public static final int company_list_view=0x7f050040;
+        public static final int company_name_company_phone_screen_text_view=0x7f050041;
+        public static final int company_name_company_screen_text_view=0x7f05003c;
+        public static final int company_phone_number_list_view=0x7f050042;
+        public static final int country_not_selected_text_view=0x7f05003e;
         public static final int default_activity_button=0x7f050028;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
         public static final int dropdown=0x7f05000f;
         public static final int edit_query=0x7f050030;
         public static final int end=0x7f050013;
+        public static final int enter_company_name_edit_text=0x7f05003f;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
         public static final int home=0x7f050014;
@@ -1119,6 +1124,10 @@ containing a value of this type.
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
+        public static final int option_list_view=0x7f050043;
+        public static final int option_number_option_screen_text_view=0x7f050044;
+        public static final int option_text_option_screen_text_view=0x7f050045;
+        public static final int phone_number_company_phone_number_screen_text_view=0x7f05003d;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
@@ -1143,6 +1152,7 @@ containing a value of this type.
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;
+        public static final int wait_time_option_screen_text_view=0x7f050046;
         public static final int withText=0x7f05000c;
     }
     public static final class integer {
@@ -1195,8 +1205,11 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
-        public static final int main=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int company_list_view_layout=0x7f030018;
+        public static final int company_phone_number_list_view_layout=0x7f030019;
+        public static final int main_layout=0x7f03001a;
+        public static final int option_number_list_view_layout=0x7f03001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1242,6 +1255,7 @@ containing a value of this type.
         public static final int action_settings=0x7f0a000f;
         public static final int app_name=0x7f0a000d;
         public static final int cancel_button_text=0x7f0a0013;
+        public static final int enter_company_name_text=0x7f0a0014;
         public static final int frequently_called_country=0x7f0a0010;
         public static final int ok_button_text=0x7f0a0012;
         public static final int please_select_a_country_warning=0x7f0a000e;

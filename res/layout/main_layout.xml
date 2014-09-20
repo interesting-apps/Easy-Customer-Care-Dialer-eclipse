@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.apps.interestingapps.easycustomercaredialer.EasyCustomerCareDialerActivity" >
+
+    <TextView
+        android:id="@+id/country_not_selected_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/please_select_a_country_warning" />
+    
+    <EditText
+        android:id="@+id/enter_company_name_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_company_name_text"
+        android:layout_below="@id/country_not_selected_text_view"  />
+    
+    <ListView 
+       android:id="@+id/company_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enter_company_name_edit_text" />
+    
+    <TextView
+        android:id="@+id/company_name_company_phone_screen_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+    
+    <ListView 
+       android:id="@+id/company_phone_number_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/company_name_company_phone_screen_text_view"
+        android:visibility="invisible" />
+    
+    <ListView 
+       	android:id="@+id/option_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/company_name_company_phone_screen_text_view"
+        android:visibility="invisible" />
+
+</RelativeLayout>

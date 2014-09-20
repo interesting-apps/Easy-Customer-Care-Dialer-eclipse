@@ -234,4 +234,71 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	}
 
+	/**
+	 * Finds out the companies that belong to the given country. Uses the Query:
+	 *
+	 * SELECT rowid _id, * FROM company WHERE company_id in (SELECT company_id
+	 * from country_consistsof_company where country_name = '${country}')
+	 */
+	public Cursor getCompaniesForCountry(String country) {
+		return database.rawQuery("SELECT rowid _id,  * FROM "
+				+ EccdConstants.COMPANY_TABLE + " WHERE "
+				+ EccdConstants.COMPANY_ID_COLUMN + " in (SELECT   "
+				+ EccdConstants.COMPANY_ID_COLUMN + " FROM "
+				+ EccdConstants.COUNTRY_CONSISTSOF_COMPANY_TABLE + " WHERE "
+				+ EccdConstants.COUNTRY_NAME_COLUMN + " = ?)",
+				new String[] { country });
+	}
+
+	/**
+	 * Finds out the phone numbers a company with given company_id in
+	 * company_has_contact table. Uses the Query:
+	 *
+	 * SELECT rowid _id, * FROM company_has_contact WHERE company_id =
+	 * ${company_id}
+	 */
+	public Cursor getPhoneNumberForCompany(int companyId) {
+		return database.rawQuery("SELECT rowid _id,  * FROM "
+				+ EccdConstants.COMPANY_HAS_CONTACT_TABLE + " WHERE "
+				+ EccdConstants.COMPANY_ID_COLUMN + "  = ?",
+				new String[] { Integer.toString(companyId) });
+	}
+
+	/**
+	 * Finds out the phone numbers a company with given company_id in
+	 * company_has_contact table. Uses the Query:
+	 *
+	 * SELECT rowid _id, * FROM options WHERE phone_number = ${phoneNumber} and
+	 * level = ${level} and parent_option_number = ${parentOptionNumber}
+	 */
+	public Cursor getOptionsForPhoneNumber(String phoneNumber,
+			int level,
+			int parentOptionNumber) {
+		return database.rawQuery("SELECT rowid _id,  * FROM "
+				+ EccdConstants.OPTIONS_TABLE + " WHERE "
+				+ EccdConstants.PHONE_NUMBER_COLUMN + "  = ? AND "
+				+ EccdConstants.LEVEL_COLUMN + " = ? AND "
+				+ EccdConstants.PARENT_OPTION_NUMBER_COLUMN + " = ?",
+				new String[] { phoneNumber, Integer.toString(level),
+						Integer.toString(parentOptionNumber) });
+	}
+
+	public int findCompanyId(String userCountry, String companyName) {
+		Cursor cursor = database.rawQuery("SELECT  "
+				+ EccdConstants.COMPANY_ID_COLUMN + " FROM "
+				+ EccdConstants.COMPANY_TABLE + " WHERE "
+				+ EccdConstants.COMPANY_NAME_COLUMN + "  = ? AND "
+				+ EccdConstants.COMPANY_ID_COLUMN + " in (" + "SELECT "
+				+ EccdConstants.COMPANY_ID_COLUMN + " FROM "
+				+ EccdConstants.COUNTRY_CONSISTSOF_COMPANY_TABLE + " WHERE "
+				+ EccdConstants.COUNTRY_NAME_COLUMN + " = ?)", new String[] {
+				companyName, userCountry });
+		if (cursor != null) {
+			if (cursor.moveToNext()) {
+				return cursor.getInt(cursor.getColumnIndex(EccdConstants.COMPANY_ID_COLUMN));
+			}
+		}
+
+		return -1;
+	}
 }
